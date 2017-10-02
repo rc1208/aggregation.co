@@ -11,7 +11,7 @@ date_default_timezone_set('America/Denver');
 // Get feeds
 $query = "SELECT * FROM feeds";
 $rows = Query($db, $query);
-
+var_dump($rows);
 // Load the items for each feed
 foreach ($rows as $feed) {
 	// Load items for all feeds

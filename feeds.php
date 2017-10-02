@@ -6,8 +6,8 @@ require("include/nav.php");
 // Get all the user's feeds
 $query = "SELECT * FROM feeds";
 $rows = Query($db, $query);
-
-
+echo "<html> <head><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
+</head></html>";
 function FeedIcon($link)
 {
         // Feed favicon.ico
@@ -20,8 +20,11 @@ function FeedIcon($link)
                 "\" type=\"image/x-icon\"></div>\n";
                 echo '<img src="';
                 echo $imgurl;
+				
                 echo '" width="16" height="16" />';
+				
                 echo "</div>\n";
+				
         }
 
 
@@ -41,17 +44,21 @@ foreach ($rows as $row) {
 			    "\">" .
 			    $row['link'] .
 			    "</a></span>\n";
+				
 /*
 			echo "<span class=\"feedsListTitle\">" .
 			    $row['link'] . "</span>\n";
 */
 		} else {
-			echo "<span class=\"feedsListTitle\">" .
+			echo "<div class=\"feedsListTitle\">" .
 			    "<a href=\"http://aggregation.co/?feed=" .
 			    $row['id'] .
 			    "\">" .
 			    $rss->channel->title .
-			    "</a></span>\n";
+			    "</a></div>\n";
+			$feed_id = $row['id'];	
+			
+			echo "<div><a href = 'delete.php?id= $feed_id'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a></div>";	
 /*
 			echo "<span class=\"feedsListTitle\">" .
 			    $rss->channel->title . "</span>\n";

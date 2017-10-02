@@ -23,14 +23,14 @@ function RealEscapeString($db, $escapestr)
  */
 
 /* $username = "root"; */
-$username = "cms";
+$username = "root";
 
 /*$password = ""; */
-$password = "Abby2008";
+$password = "5816rahul";
 
 /* $host = "localhost"; */
 //$host = "209.17.116.156";
-$host = "205.178.137.139";
+$host = "localhost";
 
 $dbname = "cornfedcms";
 
